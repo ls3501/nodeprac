@@ -16,11 +16,13 @@ CommunityCategory.init({
     type:DataTypes.STRING(45),
     allowNull:false
   },
+  
 },{
   sequelize,
   tableName:"communitycategory",
   createdAt:false,
   updatedAt:false,
+
 })
 
 

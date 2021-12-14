@@ -35,8 +35,8 @@ app
     sequelize.connectionManager.close();
   });
 
-setSSl(app).then((app) => {
-  app.listen(3001, () => {
+// setSSl(app).then((app) => {
+  app.listen(80, () => {
     sequelize
       .sync({ force: false })
       .then((res) => {})
@@ -44,4 +44,4 @@ setSSl(app).then((app) => {
         throw e;
       });
   });
-});
+// });

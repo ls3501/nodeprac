@@ -1,7 +1,4 @@
 import { Router } from 'express'
-import { literal } from 'sequelize';
-import { sequelize } from '../models';
-
 import {CommunityCategory} from '../models/communitycategory';
 import { CommunitySubCategory } from '../models/communitysubcategory';
 
@@ -19,16 +16,11 @@ export const indexRouter = router.get('/',async(req,res,next)=>{
       order:[
         ['communitySubCategoryId','desc']
       ],
-      
     })
     res.json({
       data
-    })
+    })  
   }catch(e){
     throw e
   }
-  
-  
-  
 })
-

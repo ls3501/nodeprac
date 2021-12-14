@@ -31,10 +31,27 @@ CommunitySubCategory.init(
     tableName: "communitysubcategory",
     createdAt: false,
     updatedAt: false,
-    hooks: {
-      beforeFind: (a) => {
-        console.log(a);
+    hooks:{
+      beforeFind:(options)=>{
       },
+      afterFind:(instances:any[],options)=>{
+        for(const instance of instances){
+          CommunitySubCategory.update({
+            communitySubtitle:instance.getDataValue('communitySubtitle').replace(/[1-9ㄱ-ㅎ]/ig,''),
+          },{
+            where:{
+              communitySubCategoryId:instance.getDataValue('communitySubCategoryId'),
+            }
+          })
+        }  
+      },
+      beforeUpdate:(instance,option) => {
+        isEven: ()=>{
+          
+        }
+      }
     },
+    
+
   }
 );

@@ -1,4 +1,4 @@
-import { query, Request, Router } from "express";
+import { Router } from "express";
 import { CommunityObject } from "../models/communityObject";
 import {
   CommunitySubCategory,
@@ -40,3 +40,4 @@ insRouter.get<unknown, unknown, unknown, CommunitySubCategoryType>(
 insRouter.get("/21312312", (req, res, next) => {
   const a = req.query;
 });
+

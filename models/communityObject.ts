@@ -30,5 +30,17 @@ CommunityObject.init(
     tableName: "communityObject",
     createdAt:false,
     updatedAt:false,
+    hooks:{
+      afterUpdate:(instance,option)=>{
+        
+      },
+      beforeSave:(instance,option)=>{
+        
+      },
+      afterSync:(option)=>{
+        
+      }
+      
+    }
   }
 );
